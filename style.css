@@ -359,3 +359,58 @@
 .btn-accept:hover {
     transform: scale(1.05);
 }
+
+/* Destaques */
+.destaques {
+    background: #f8f9fa;
+}
+
+.destaques-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.destaque-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destaque-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.destaque-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.destaque-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.destaque-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.destaque-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.destaque-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
