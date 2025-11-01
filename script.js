@@ -35,3 +35,27 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });    
 });
+    // Inicializar funcionalidade de botões de filtro de fotos
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const fotoItems = document.querySelectorAll(".foto-item");
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Remover classe ativa de todos os botões
+            filterBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            
+            // Obter o filtro selecionado
+            const selectedFilter = btn.getAttribute("data-filter");
+            
+            // Mostrar/ocultar fotos baseado no filtro
+            fotoItems.forEach(item => {
+                const itemCategory = item.getAttribute("data-category");
+                if (itemCategory === selectedFilter) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    });
