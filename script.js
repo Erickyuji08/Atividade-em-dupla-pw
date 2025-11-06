@@ -59,3 +59,36 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+
+    // Inicializar funcionalidade de seletor de cores
+    const colors = document.querySelectorAll(".color");
+
+    colors.forEach(color => {
+        color.addEventListener("click", function() {
+            // 1. Obter a cor selecionada
+            const selectedColor = this.getAttribute("data-color");
+            
+            // 2. Encontrar o card da versão pai
+            const versaoCard = this.closest(".versao-card");
+            
+            if (versaoCard) {
+                // 3. Ocultar todas as imagens de carro dentro deste card
+                const carImages = versaoCard.querySelectorAll(".versao-image");
+                carImages.forEach(img => {
+                    img.style.display = "none";
+                });
+                
+                // 4. Mostrar a imagem correspondente à cor selecionada
+                const targetImage = versaoCard.querySelector(`.versao-image[data-color="${selectedColor}"]`);
+                if (targetImage) {
+                    targetImage.style.display = "block";
+                }
+                
+                // 5. Atualizar o estado ativo do seletor de cores
+                const colorSelectors = this.parentElement.querySelectorAll(".color");
+                colorSelectors.forEach(s => s.classList.remove("active"));
+                this.classList.add("active");
+            }
+        });
+    });
+    
