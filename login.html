@@ -1,0 +1,39 @@
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Velocity X</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h2>Login - Velocity X</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn-login">Entrar</button>
+            <a href="#" class="forgot-password" onclick="alert('Link de redefinição de senha enviado para o e-mail cadastrado.')">Esqueci a senha</a>
+        </form>
+        
+        <div class="divider">ou</div>
+        
+        <button class="btn-google" onclick="alert('Redirecionando para login com Google... ')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google Logo">
+            Entrar com Google
+        </button>
+
+        <div class="register-link">
+            Não tem conta? <a href="cadastro.html">Cadastre-se</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
