@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Proposta - Velocity X</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="proposta-container">
+        <h2>Enviar Proposta de Veículo</h2>
+        
+        <div id="userInfo" class="user-info">
+            <!-- Informações do usuário logado serão inseridas aqui pelo JavaScript -->
+        </div>
+
+        <form id="propostaForm">
+            <div class="form-group">
+                <label>Selecione o Veículo de Interesse</label>
+                <div class="vehicle-selection" id="vehicleSelection">
+                    <!-- Opções de veículos serão inseridas aqui pelo JavaScript -->
+                </div>
+                <input type="hidden" id="veiculo" name="veiculo" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="valorProposto">Valor Proposto (R$)</label>
+                <input type="number" id="valorProposto" name="valorProposto" required min="10000">
+            </div>
+            
+            <div class="form-group">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Enviar Proposta</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

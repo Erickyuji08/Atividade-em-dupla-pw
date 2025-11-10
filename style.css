@@ -1007,3 +1007,202 @@ body {
     text-decoration: underline;
 }
 
+/* Estilos Específicos de admin.html */
+.admin-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.admin-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+.propostas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.propostas-table th, .propostas-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+.propostas-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.propostas-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.propostas-table tr:hover {
+    background-color: #f1f1f1;
+}
+.no-proposals {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
+.logout-btn {
+    float: right;
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Estilos Específicos de proposta.html */
+.proposta-container {
+    max-width: 800px; /* Aumentar o tamanho para caber as imagens */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.proposta-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+.user-info {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+.vehicle-selection {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.vehicle-card {
+    flex: 1;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.vehicle-card:hover {
+    border-color: #007bff;
+}
+.vehicle-card.selected {
+    border-color: #28a745;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+    background-color: #e6ffe6;
+}
+.vehicle-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.vehicle-card h4 {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Estilos Específicos de reset_password.html */
+.reset-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.reset-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}

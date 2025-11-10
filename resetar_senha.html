@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha - Velocity X</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body class="login-page">
+    <div class="reset-container">
+        <h2 id="formTitle">Redefinir Senha</h2>
+        
+        <div id="step1">
+            <p>Informe seu e-mail para iniciar a redefinição de senha.</p>
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="resetEmail">E-mail</label>
+                    <input type="email" id="resetEmail" name="resetEmail" required>
+                </div>
+                <button type="submit" class="btn-submit">Confirmar E-mail</button>
+            </form>
+        </div>
+
+        <div id="step2" style="display: none;">
+            <p>Seu e-mail foi confirmado. Digite sua nova senha.</p>
+            <form id="passwordForm">
+                <div class="form-group">
+                    <label for="newPassword">Nova Senha</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar Nova Senha</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="btn-submit">Redefinir Senha</button>
+            </form>
+        </div>
+
+        <div id="messageContainer"></div>
+        
+        <div class="register-link" style="margin-top: 20px;">
+            Lembrou da senha? <a href="login.html">Fazer Login</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
