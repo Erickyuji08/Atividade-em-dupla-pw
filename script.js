@@ -81,6 +81,7 @@
         obter() { return Armazenamento.ler(LS_KEY_LOGGED_USER, null); },
         limpar() { Armazenamento.remover(LS_KEY_LOGGED_USER); }
     };
+    
 
     // --------------------------- Propostas --------------------------------
     const PropostasRepo = {
@@ -427,6 +428,43 @@
             cookieNotice.classList.remove("hidden");
         }
     });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const cookieNotice = document.getElementById('cookieNotice');
+        const localStorageKey = 'cookiesAccepted';
+
+        // 1. Função para verificar se o usuário já aceitou os cookies
+        function checkCookieAcceptance() {
+            // Verifica se a chave de aceitação existe no localStorage
+            if (localStorage.getItem(localStorageKey) === 'true') {
+                // Se aceitou, oculta o aviso de cookies
+                if (cookieNotice) {
+                    cookieNotice.classList.add('hidden');
+                }
+            } else {
+                // Se não aceitou, garante que o aviso esteja visível (removendo a classe 'hidden' se existir)
+                if (cookieNotice) {
+                    cookieNotice.classList.remove('hidden');
+                }
+            }
+        }
+
+        // 2. Função para aceitar os cookies (chamada pelo botão no HTML)
+        window.acceptCookies = function () {
+            // Define a chave no localStorage para indicar que os cookies foram aceitos
+            localStorage.setItem(localStorageKey, 'true');
+
+            // Oculta o aviso imediatamente
+            if (cookieNotice) {
+                cookieNotice.classList.add('hidden');
+            }
+        };
+
+        // Executa a verificação ao carregar a página
+        checkCookieAcceptance();
+    });
+    
+
 
     //Tabs / Filtro / Seletor de Cores
     document.addEventListener("DOMContentLoaded", () => {

@@ -1007,7 +1007,7 @@ body {
     text-decoration: underline;
 }
 
-/* Estilos Específicos de admin.html */
+/* Admin */
 .admin-container {
     max-width: 1200px;
     margin: 50px auto;
@@ -1061,7 +1061,7 @@ body {
     background-color: #c82333;
 }
 
-/* Estilos Específicos de proposta.html */
+/* Proposta */
 .proposta-container {
     max-width: 800px; /* Aumentar o tamanho para caber as imagens */
     margin: 50px auto;
@@ -1147,7 +1147,7 @@ body {
     font-size: 1em;
 }
 
-/* Estilos Específicos de reset_password.html */
+/* Resetar Senha */
 .reset-container {
     max-width: 400px;
     margin: 50px auto;
