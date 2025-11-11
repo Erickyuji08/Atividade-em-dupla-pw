@@ -239,7 +239,15 @@ body {
     animation: float 3s ease-in-out infinite;
 }
 
-
+/* Animação */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
 
 /* Footer */
 .footer {
@@ -1249,3 +1257,126 @@ body {
     color: #721c24;
     border-color: #f5c6cb;
 }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 20px 50px;
+    }
+    
+    .hero-image {
+        max-width: 80%;
+        margin-top: 30px;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .header-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 48px;
+    }
+    
+    .hero-subtitle {
+        font-size: 64px;
+    }
+    
+    .hero-description {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 36px;
+    }
+    
+    .destaques-grid,
+    .versoes-grid,
+    .ofertas-grid,
+    .fotos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+    
+    .nav {
+        gap: 10px;
+        font-size: 12px;
+    }
+    
+    .header-buttons {
+        gap: 8px;
+    }
+    
+    .btn-mode,
+    .btn-primary,
+    .btn-secondary {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    
+    .hero-title {
+        font-size: 36px;
+    }
+    
+    .hero-subtitle {
+        font-size: 48px;
+    }
+    
+    .hero-description {
+        font-size: 18px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .destaque-card h3,
+    .versao-card h3,
+    .oferta-card h3 {
+        font-size: 18px;
+    }
+    
+    .price-value {
+        font-size: 24px;
+    }
+}
+

@@ -81,7 +81,7 @@
         obter() { return Armazenamento.ler(LS_KEY_LOGGED_USER, null); },
         limpar() { Armazenamento.remover(LS_KEY_LOGGED_USER); }
     };
-    
+
 
     // --------------------------- Propostas --------------------------------
     const PropostasRepo = {
@@ -463,7 +463,7 @@
         // Executa a verificação ao carregar a página
         checkCookieAcceptance();
     });
-    
+
 
 
     //Tabs / Filtro / Seletor de Cores
@@ -481,6 +481,14 @@
                 if (targetContent) targetContent.classList.add("active");
             });
         });
+
+        //Botao de entrar em contato
+        document.querySelectorAll('.btn-simulate').forEach(botao => {
+            botao.addEventListener('click', () => {
+                window.location.href = 'login.html';
+            });
+        });
+
 
         // Filtro de fotos
         const filterBtns = document.querySelectorAll(".filter-btn");
