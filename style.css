@@ -1,30 +1,78 @@
+/* ==========================================================================
+   ESTILOS GLOBAIS E BASE
+   ========================================================================== */
+
+/* Reset Básico */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura e altura total do elemento */
 }
 
+/* Estilos do Corpo da Página */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Previne rolagem horizontal indesejada */
 }
 
+/* Container de Conteúdo Centralizado */
 .container {
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centraliza o container na página */
     padding: 0 20px;
 }
 
-/* Header */
+/* Estilos de Seção Genéricos */
+.section {
+    padding: 100px 0;
+    margin-top: 60px;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Estilos de Botões Genéricos */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente de cor complexo */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-secondary:hover {
+    transform: scale(1.05);
+}
+
+.btn-mode:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   COMPONENTES DE LAYOUT (HEADER E FOOTER)
+   ========================================================================== */
+
+/* --- HEADER (Cabeçalho Fixo) --- */
 .header {
-    position: fixed;
+    position: fixed; /* Fixa o cabeçalho no topo da viewport */
     top: 0;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo, complexo */
+    z-index: 1000; /* Garante que o header fique acima de outros elementos */
     padding: 15px 0;
 }
 
@@ -63,28 +111,7 @@ body {
     align-items: center;
 }
 
-.btn-mode:hover {
-    transform: scale(1.05);
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-size: 14px;
-    transition: transform 0.3s;
-}
-
-.btn-primary:hover {
-    transform: scale(1.05);
-}
-
-.btn-secondary:hover {
-    transform: scale(1.05);
-}
-
+/* --- FOOTER (Rodapé) --- */
 .footer {
     background: #1a1a1a;
     color: #fff;
@@ -93,7 +120,7 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Layout responsivo com grid, complexo */
     gap: 40px;
     margin-bottom: 40px;
 }
@@ -153,23 +180,14 @@ body {
     opacity: 1;
 }
 
-/* Section */
-.section {
-    padding: 100px 0;
-    margin-top: 60px;
-}
+/* ==========================================================================
+   PÁGINA INICIAL (HOME)
+   ========================================================================== */
 
-.section-title {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 60px;
-    text-align: center;
-    line-height: 1.2;
-}
-
+/* --- HERO SECTION (Primeira Dobra) --- */
 .hero {
     position: relative;
-    height: 100vh;
+    height: 100vh; /* Ocupa a altura total da viewport */
     background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     display: flex;
     align-items: center;
@@ -235,11 +253,11 @@ body {
 .hero-image img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 20px 50px rgba(0, 191, 255, 0.3));
-    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 20px 50px rgba(0, 191, 255, 0.3)); /* Efeito de sombra azul para destaque */
+    animation: float 3s ease-in-out infinite; /* Animação de flutuação */
 }
 
-/* Animação */
+/* Animação de flutuação (complexa) */
 @keyframes float {
     0%, 100% {
         transform: translateY(0px);
@@ -249,141 +267,14 @@ body {
     }
 }
 
-/* Footer */
-.footer {
-    background: #1a1a1a;
-    color: #fff;
-    padding: 60px 0 30px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-section h4 {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.footer-section p {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 10px;
-}
-
-.footer-section ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-
-.footer-section ul li a:hover {
-    opacity: 1;
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-bottom p {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-.footer-bottom a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-
-.footer-bottom a:hover {
-    opacity: 1;
-}
-
-/* Cookies */
-.cookie-notice {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    z-index: 1000;
-    animation: slideUp 0.5s ease-out;
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-.cookie-notice.hidden {
-    display: none;
-}
-
-.cookie-content h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.cookie-content p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.cookie-content a {
-    color: #00bfff;
-    text-decoration: none;
-}
-
-.btn-accept {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.btn-accept:hover {
-    transform: scale(1.05);
-}
-
-/* Destaques */
+/* --- DESTAQUES (Highlights Section) --- */
 .destaques {
     background: #f8f9fa;
 }
 
 .destaques-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo com grid */
     gap: 40px;
 }
 
@@ -396,7 +287,7 @@ body {
 }
 
 .destaque-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* Efeito de levantar no hover */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
@@ -431,7 +322,7 @@ body {
     color: #666;
 }
 
-/* Tudo Sobre */
+/* --- TUDO SOBRE (Tabs Section) --- */
 .tudo-sobre {
     background: #fff;
 }
@@ -464,16 +355,16 @@ body {
 }
 
 .tab-content {
-    display: none;
+    display: none; /* Esconde o conteúdo da aba por padrão */
 }
 
 .tab-content.active {
-    display: block;
+    display: block; /* Mostra o conteúdo da aba ativa */
 }
 
 .content-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Layout de duas colunas */
     gap: 60px;
     align-items: center;
 }
@@ -498,12 +389,12 @@ body {
     font-size: 16px;
     padding: 10px 0;
     padding-left: 30px;
-    position: relative;
     color: #666;
+    position: relative; /* Necessário para posicionar o pseudo-elemento */
 }
 
 .content-text ul li:before {
-    content: "✓";
+    content: "✓"; /* Pseudo-elemento para criar um ícone de checkmark (complexo) */
     position: absolute;
     left: 0;
     color: #00bfff;
@@ -516,7 +407,7 @@ body {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
-/* Fotos */
+/* --- FOTOS (Gallery Section) --- */
 .fotos {
     background: #f8f9fa;
 }
@@ -550,7 +441,7 @@ body {
 
 .fotos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Layout responsivo com grid */
     gap: 30px;
 }
 
@@ -562,7 +453,7 @@ body {
 }
 
 .foto-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Efeito de zoom no hover */
 }
 
 .foto-item img {
@@ -571,14 +462,14 @@ body {
     object-fit: cover;
 }
 
-/* Ofertas */
+/* --- OFERTAS (Offers Section) --- */
 .ofertas {
     background: #fff;
 }
 
 .ofertas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Layout responsivo com grid */
     gap: 40px;
     margin-bottom: 50px;
 }
@@ -592,7 +483,7 @@ body {
 }
 
 .oferta-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* Efeito de levantar no hover */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
@@ -634,9 +525,10 @@ body {
 
 .oferta-card .btn-simulate {
     margin: 0 30px 30px;
-    width: calc(100% - 60px);
+    width: calc(100% - 60px); /* Cálculo para manter o padding lateral de 30px */
 }
 
+/* Estilos de seleção de cor (repetidos, mas mantidos para contexto da seção) */
 .color-selector {
     margin-bottom: 25px;
 }
@@ -699,7 +591,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Versões */
+/* --- VERSÕES (Versions/Pricing Section) --- */
 .versoes {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: #fff;
@@ -711,13 +603,13 @@ body {
 
 .versoes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Layout responsivo com grid */
     gap: 40px;
 }
 
 .versao-card {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo, complexo */
     border-radius: 20px;
     padding: 40px;
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -756,68 +648,6 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.color-selector {
-    margin-bottom: 25px;
-}
-
-.color-selector span {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.colors {
-    display: flex;
-    gap: 10px;
-}
-
-.color {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: transform 0.3s, border-color 0.3s;
-}
-
-.color:hover {
-    transform: scale(1.1);
-    border-color: #fff;
-}
-
-.price {
-    margin-bottom: 20px;
-}
-
-.price-label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-    opacity: 0.8;
-}
-
-.price-value {
-    display: block;
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.btn-simulate {
-    width: 100%;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    color: #fff;
-    border: none;
-    padding: 15px;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.btn-simulate:hover {
-    transform: scale(1.05);
-}
-
 .versao-image-container {
     width: 100%;
     height: 300px;
@@ -836,6 +666,7 @@ body {
     object-fit: contain;
 }
 
+/* Estilos de seleção de cor (repetidos, mas mantidos para contexto da seção) */
 .color-selector .colors {
     display: flex;
     gap: 10px;
@@ -851,23 +682,22 @@ body {
     transition: all 0.3s ease;
 }
 
-.color:hover {
-    transform: scale(1.1);
-}
-
 .color.active {
-    border: 3px solid #fff;
+    border: 3px solid #fff; /* Borda mais grossa para indicar seleção */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Telas de Autenticação */
+/* ==========================================================================
+   PÁGINAS DE AUTENTICAÇÃO (LOGIN/CADASTRO)
+   ========================================================================== */
+
 .login-page, .cadastro-page {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-    padding-top: 0 !important; /* Sobrescrever padding-top do body */
+    padding-top: 0 !important; /* Sobrescreve o padding-top do body/section, complexo */
 }
 
 .login-container, .cadastro-container {
@@ -950,6 +780,7 @@ body {
     text-decoration: underline;
 }
 
+/* Divisor com linha */
 .divider {
     text-align: center;
     margin: 20px 0;
@@ -1015,13 +846,45 @@ body {
     text-decoration: underline;
 }
 
-/* Admin */
-body {
+.login-container {
+    position: relative; /* Garante que o .home-link seja posicionado em relação a ele */
+    padding-top: 50px; /* Adiciona espaço no topo para o ícone */
+}
+
+.home-link {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    text-decoration: none; /* Remove sublinhado do link */
+}
+
+.home-link:hover {
+    transform: scale(1.1);
+}
+
+.home-link i {
+    font-size: 20px; /* Tamanho do ícone */
+    color: #333; /* Cor escura para o ícone dentro do container branco */
+}
+
+.login-container h2 {
+    margin-top: 0; /* Remove margem superior extra se houver */
+}
+
+/* ==========================================================================
+   PÁGINA DE ADMINISTRAÇÃO (ADMIN)
+   ========================================================================== */
+
+/* Estilos de fundo específicos para a página de Admin */
+.admin-page-body {
     background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     min-height: 100vh;
     font-family: sans-serif;
 }
-/* Admin - Ajustes no container para destacar sobre o gradiente */
+
+/* Ajustes no container para destacar sobre o gradiente */
 .admin-container {
     max-width: 1200px;
     margin: 50px auto;
@@ -1056,7 +919,7 @@ body {
     font-weight: bold;
 }
 
-/* Linhas da tabela */
+/* Linhas da tabela (zebra striping) */
 .propostas-table tr:nth-child(even) {
     background-color: #fff; /* Fundo branco padrão */
 }
@@ -1089,9 +952,12 @@ body {
     background-color: #0056b3;
 }
 
+/* ==========================================================================
+   PÁGINA DE PROPOSTA (FORMULÁRIO)
+   ========================================================================== */
 
-/* Proposta */
-body {
+/* Estilos de fundo específicos para a página de Proposta */
+.proposta-page-body {
     background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     font-family: sans-serif;
     padding: 20px;
@@ -1113,44 +979,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Estilos dos campos do formulário */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.form-group input[type="text"],
-.form-group input[type="number"],
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-
-/* Botão de envio */
-.btn-submit {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-}
-
-.btn-submit:hover {
-    background-color: #0056b3;
-}
-
 /* Bloco de informações do usuário */
 .user-info {
     margin-bottom: 25px;
@@ -1159,7 +987,7 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Seleção de veículos */
+/* Seleção de veículos (complexo) */
 .vehicle-selection {
     display: flex;
     gap: 10px;
@@ -1167,7 +995,7 @@ body {
 }
 
 .vehicle-card {
-    flex: 1;
+    flex: 1; /* Garante que os cards ocupem espaço igual */
     border: 2px solid #ddd;
     border-radius: 8px;
     padding: 10px;
@@ -1198,7 +1026,10 @@ body {
     font-size: 1em;
 }
 
-/* Resetar Senha */
+/* ==========================================================================
+   PÁGINA DE RESETAR SENHA
+   ========================================================================== */
+
 .reset-container {
     max-width: 400px;
     margin: 50px auto;
@@ -1212,35 +1043,8 @@ body {
     margin-bottom: 20px;
     color: #333;
 }
-.form-group {
-    margin-bottom: 15px;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-.form-group input[type="email"],
-.form-group input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-.btn-submit {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-}
-.btn-submit:hover {
-    background-color: #0056b3;
-}
+
+/* Estilos de mensagem de sucesso/erro */
 .message {
     margin-top: 15px;
     padding: 10px;
@@ -1258,10 +1062,144 @@ body {
     border-color: #f5c6cb;
 }
 
-/* Responsive */
+/* ==========================================================================
+   COMPONENTES GERAIS (COOKIES)
+   ========================================================================== */
+
+/* --- COOKIE NOTICE (Aviso de Cookies) --- */
+.cookie-notice {
+    position: fixed; /* Fixa o aviso na parte inferior */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    z-index: 1000;
+    animation: slideUp 0.5s ease-out; /* Animação de entrada (complexo) */
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.cookie-notice.hidden {
+    display: none;
+}
+
+.cookie-content h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.cookie-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cookie-content a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.btn-accept {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.btn-accept:hover {
+    transform: scale(1.05);
+}
+
+/* Privacy Policy Banner */
+.privacy-policy-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fundo escuro semi-transparente */
+    z-index: 2000; /* Acima de tudo, incluindo o cookie-notice */
+    display: none; /* Inicialmente oculto */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.privacy-policy-banner.show {
+    display: flex;
+    opacity: 1;
+}
+
+.privacy-policy-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+.privacy-policy-banner.show .privacy-policy-content {
+    transform: scale(1);
+}
+
+.privacy-policy-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.privacy-policy-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-close-policy {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin-top: 20px;
+    float: right;
+}
+
+.btn-close-policy:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================================================== */
+
 @media (max-width: 1024px) {
+    /* Ajustes para telas de tablet e menores */
     .hero {
-        flex-direction: column;
+        flex-direction: column; /* Empilha conteúdo e imagem */
         justify-content: center;
         text-align: center;
         padding: 100px 20px 50px;
@@ -1273,11 +1211,12 @@ body {
     }
     
     .content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Muda para layout de coluna única */
     }
 }
 
 @media (max-width: 768px) {
+    /* Ajustes para telas de celular */
     .header .container {
         flex-direction: column;
         gap: 15px;
@@ -1305,52 +1244,33 @@ body {
         font-size: 24px;
     }
     
-    .section-title {
-        font-size: 36px;
-    }
-    
-    .destaques-grid,
-    .versoes-grid,
-    .ofertas-grid,
     .fotos-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Coluna única para a galeria de fotos */
     }
     
-    .tabs {
-        flex-direction: column;
-        align-items: center;
+    .ofertas-grid {
+        grid-template-columns: 1fr; /* Coluna única para as ofertas */
     }
     
-    .content-grid {
-        grid-template-columns: 1fr;
+    .versoes-grid {
+        grid-template-columns: 1fr; /* Coluna única para as versões */
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr; /* Coluna única para o rodapé */
     }
     
     .footer-bottom {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
+        gap: 10px;
     }
 }
 
 @media (max-width: 480px) {
-    .logo {
-        font-size: 18px;
-    }
-    
-    .nav {
-        gap: 10px;
-        font-size: 12px;
-    }
-    
-    .header-buttons {
-        gap: 8px;
-    }
-    
-    .btn-mode,
-    .btn-primary,
-    .btn-secondary {
-        padding: 8px 15px;
-        font-size: 12px;
+    /* Ajustes finos para celulares menores */
+    .section-title {
+        font-size: 36px;
     }
     
     .hero-title {
@@ -1365,18 +1285,7 @@ body {
         font-size: 18px;
     }
     
-    .section-title {
-        font-size: 28px;
-    }
-    
-    .destaque-card h3,
-    .versao-card h3,
-    .oferta-card h3 {
-        font-size: 18px;
-    }
-    
-    .price-value {
-        font-size: 24px;
+    .login-container, .cadastro-container {
+        padding: 20px;
     }
 }
-
