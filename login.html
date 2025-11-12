@@ -1,14 +1,19 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Velocity X</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Script oficial do Google Identity -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body class="login-page">
     <div class="login-container">
         <h2>Login - Velocity X</h2>
+        
+        <!-- Formulário normal -->
         <form id="loginForm">
             <div class="form-group">
                 <label for="email">E-mail</label>
@@ -19,18 +24,29 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit" class="btn-login">Entrar</button>
-	            
             <a href="reset_password.html" class="forgot-password">Esqueci a senha</a>
         </form>
-        
-        <div class="divider">ou</div>
-        
-        <button class="btn-google" onclick="alert('Redirecionando para login com Google... ')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google Logo">
-            Entrar com Google
-        </button>
 
-	        <div class="register-link">
+        <!-- Divisor -->
+        <div class="divider">ou</div>
+
+        <!-- Login com Google -->
+        <div id="g_id_onload"
+             data-client_id="524810554951-6j110521rhbu9c4c9b24v544q1l31im7.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse">
+        </div>
+
+        <!-- Botão estilizado do Google -->
+        <div class="g_id_signin"
+             data-type="standard"
+             data-shape="rectangular"
+             data-theme="outline"
+             data-text="signin_with"
+             data-size="large"
+             data-logo_alignment="left">
+        </div>
+
+        <div class="register-link">
             Não tem conta? <a href="cadastro.html">Cadastre-se</a>
         </div>
     </div>
