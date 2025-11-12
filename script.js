@@ -551,7 +551,7 @@ admin: {
     // =========================================================================
     // Expor funções globais
     // =========================================================================
-    // Torna funções e variáveis acessíveis no escopo global (window)
+    // Torna funções e variáveis acessíveis no escopo global. (window)
     // para uso em elementos HTML com atributos inline (onclick, onsubmit etc.)
 
     // --------------------------- Ações principais ----------------------------
