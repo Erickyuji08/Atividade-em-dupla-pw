@@ -1,14 +1,3 @@
-/*! consolidated.js — Velocity X
-   Módulos:
-   - Armazenamento: LocalStorage seguro
-   - UsuariosRepo: CRUD de usuários
-   - Sessao: login atual
-   - PropostasRepo: CRUD de propostas
-   - IU: mensagens e navegação
-   - Paginas: login, cadastro, reset, proposta, admin, negocie
-   - Extras: cookies, abas, filtro de fotos, seletor de cores
-*/
-
 (function (window, document) {
     'use strict';
 
@@ -464,8 +453,6 @@
         checkCookieAcceptance();
     });
 
-
-
     //Tabs / Filtro / Seletor de Cores
     document.addEventListener("DOMContentLoaded", () => {
         // Tabs
@@ -538,11 +525,7 @@
         // Lógica de logout para index.html e admin.html
         document.getElementById('logoutButton')?.addEventListener('click', Paginas.login.sair);
 
-        // Lógica para o botão "Negocie" em index.html
-        document.getElementById('loginLink')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            Paginas.negocie.acionar();
-        });
+       
 
         // Atualiza o link de login/logout na index.html
         const user = Sessao.obter();
@@ -568,55 +551,55 @@
         }
     });
 
-     // ------------------- Integração com Google OAuth -------------------
-        window.handleCredentialResponse = function(response) {
-            try {
-                const token = response.credential;
-                const data = decodeJwt(token);
+    // ------------------- Integração com Google OAuth -------------------
+    window.handleCredentialResponse = function (response) {
+        try {
+            const token = response.credential;
+            const data = decodeJwt(token);
 
-                console.log("Usuário Google:", data);
+            console.log("Usuário Google:", data);
 
-                const email = data.email;
-                const nome = data.name;
-                const foto = data.picture;
+            const email = data.email;
+            const nome = data.name;
+            const foto = data.picture;
 
-                // Verifica se o usuário já existe
-                let user = UsuariosRepo.obterPorEmail(email);
+            // Verifica se o usuário já existe
+            let user = UsuariosRepo.obterPorEmail(email);
 
-                if (!user) {
-                    // Cria automaticamente o usuário Google no sistema local
-                    user = {
-                        id: Date.now(),
-                        nome: nome,
-                        email: email,
-                        foto: foto,
-                        password: null,
-                        isAdmin: false
-                    };
-                    UsuariosRepo.adicionar(user);
-                }
-
-                // Cria sessão local
-                Sessao.definir(user);
-
-                IU.msg(`Bem-vindo, ${nome}!`);
-                IU.navegar('proposta.html');
-            } catch (err) {
-                console.error("Erro no login com Google:", err);
-                IU.msg("Erro ao autenticar com o Google. Tente novamente.");
+            if (!user) {
+                // Cria automaticamente o usuário Google no sistema local
+                user = {
+                    id: Date.now(),
+                    nome: nome,
+                    email: email,
+                    foto: foto,
+                    password: null,
+                    isAdmin: false
+                };
+                UsuariosRepo.adicionar(user);
             }
-        };
 
-        function decodeJwt(token) {
-            const base64Url = token.split('.')[1];
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            const jsonPayload = decodeURIComponent(
-                atob(base64)
-                    .split('')
-                    .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
-                    .join('')
-            );
-            return JSON.parse(jsonPayload);
+            // Cria sessão local
+            Sessao.definir(user);
+
+            IU.msg(`Bem-vindo, ${nome}!`);
+            IU.navegar('proposta.html');
+        } catch (err) {
+            console.error("Erro no login com Google:", err);
+            IU.msg("Erro ao autenticar com o Google. Tente novamente.");
         }
+    };
+
+    function decodeJwt(token) {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(
+            atob(base64)
+                .split('')
+                .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+                .join('')
+        );
+        return JSON.parse(jsonPayload);
+    }
 
 })(window, document);
